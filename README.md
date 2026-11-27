@@ -40,12 +40,13 @@ The project is **GameStore.Api**, a REST API for a game store, built on the **AS
 ## VS Code extensions
 
 - [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) (Microsoft)
-- [IntelliCode for C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscodeintellicode-csharp) (Microsoft)
 - [.NET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime) (Microsoft)
 - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) (Huachao Mao)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite) (alexcvzz)
 
 Installing C# Dev Kit also installs its dependencies, the [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) extension and the .NET Install Tool.
+
+> **IntelliCode for C# Dev Kit is deprecated.** Microsoft now recommends GitHub Copilot instead, so it's not used here. You don't lose normal C# IntelliSense without it. Completions, go-to-definition and error checking come from the C# extension that C# Dev Kit installs. IntelliCode only added AI ranking and whole-line suggestions on top, and Copilot does that job now.
 
 ## .NET CLI commands
 
