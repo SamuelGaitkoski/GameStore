@@ -8,6 +8,23 @@ A learning project built while following **Julio Casal**'s ASP.NET Core course o
 
 This repository contains the code written step by step alongside the videos, covering how to build a web API with ASP.NET Core and .NET 8.
 
+## What this course covers
+
+- Creating ASP.NET Core apps
+- Understanding REST APIs
+- Implementing CRUD endpoints
+- Data Transfer Objects (DTOs)
+- Extension methods
+- Route groups
+- Handling invalid inputs
+- Entity Framework Core (ORM)
+- The configuration system
+- Dependency injection
+- Service lifetimes
+- Mapping entities to DTOs
+- Asynchronous programming
+- Frontend integration
+
 ## Tech stack
 
 - .NET 8 SDK
