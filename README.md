@@ -10,6 +10,10 @@ This repository contains the code written step by step alongside the videos, cov
 
 The project is **GameStore.Api**, a REST API for a game store, built on the **ASP.NET Core Empty** template and grown step by step through the course.
 
+## Solution
+
+The repo uses a **solution** (`GameStore.sln`) to group the different projects that together build the application. Right now it holds just `GameStore.Api`, and more projects can be added to it as the app grows. Opening the solution in VS Code (C# Dev Kit) or Visual Studio loads all its projects at once, and building the solution builds every project in it.
+
 ## What this course covers
 
 - Creating ASP.NET Core apps
