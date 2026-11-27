@@ -8,6 +8,8 @@ A learning project built while following **Julio Casal**'s ASP.NET Core course o
 
 This repository contains the code written step by step alongside the videos, covering how to build a web API with ASP.NET Core and .NET 8.
 
+The project is **GameStore.Api**, a REST API for a game store, built on the **ASP.NET Core Empty** template and grown step by step through the course.
+
 ## What this course covers
 
 - Creating ASP.NET Core apps
@@ -53,6 +55,9 @@ Installing C# Dev Kit also installs its dependencies, the [C#](https://marketpla
 | `dotnet --info` | Shows details on installed SDKs, runtimes, and environment |
 | `dotnet new <template>` | Creates a new project from a template |
 | `dotnet new list` | Lists the project templates available in the SDK |
+| `dotnet new web -n GameStore.Api` | Creates the `GameStore.Api` project from the **ASP.NET Core Empty** template (`web`); `-n` sets the project name |
+
+> `web` is the **ASP.NET Core Empty** template, a minimal app with just `Program.cs`, and it's the one this course uses. Don't confuse it with `webapi` (**ASP.NET Core Web API**), which adds Swagger and a sample weather endpoint.
 
 ## C# Dev Kit commands
 
