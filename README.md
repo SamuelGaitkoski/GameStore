@@ -57,6 +57,21 @@ As the project grows, the `.csproj` also lists:
 
 You can add packages from the CLI with `dotnet add package <name>`, or from Solution Explorer.
 
+## Configuration (appsettings.json)
+
+The `appsettings` files hold the app's **configuration**: settings that can change from one environment to another (development, staging, production) without changing code. Examples are log levels, allowed hosts and, later in the course, the database connection string.
+
+| File | When it's used |
+| --- | --- |
+| `appsettings.json` | Base settings, loaded in **every** environment |
+| `appsettings.Development.json` | Loaded only in the **Development** environment, on top of `appsettings.json` |
+
+- **Which environment:** set by the `ASPNETCORE_ENVIRONMENT` environment variable. `Properties/launchSettings.json` sets it to `Development` when you run the app locally with `dotnet run`.
+- **Overrides:** an environment file only needs the settings that differ. Any key it repeats replaces the value from `appsettings.json`. Other environments work the same way, like `appsettings.Production.json`.
+- **Loading:** `WebApplication.CreateBuilder(args)` loads these files automatically, and the values are available through `builder.Configuration`.
+
+Configuration can also come from other sources, which override the JSON files in this order (later wins): `appsettings.json` → `appsettings.{Environment}.json` → user secrets (Development only) → environment variables → command-line arguments.
+
 ## Program.cs
 
 ```csharp
