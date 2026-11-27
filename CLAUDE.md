@@ -14,7 +14,9 @@ https://www.youtube.com/watch?v=AhAxLiGC7Pc&list=PLeD0-5Hw0ZJ8U7NmCqObexO-mnuts2
 
 ## Committing and pushing
 
-When asked to commit and push:
+Always commit and push right after finishing anything the user asks for. Don't ask first.
+
+When committing and pushing:
 
 - Make **one commit per file**. Every changed, added, or deleted file gets its own commit.
 - Use **Conventional Commits** for the subject line (`feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test:`, `build:`, etc.), with an optional scope, e.g. `feat(api): add games endpoint`.
