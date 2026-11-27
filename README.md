@@ -57,6 +57,17 @@ As the project grows, the `.csproj` also lists:
 
 You can add packages from the CLI with `dotnet add package <name>`, or from Solution Explorer.
 
+## Build output (bin and obj)
+
+Building the project creates two folders inside `GameStore.Api`:
+
+| Folder | What it holds |
+| --- | --- |
+| `obj/` | **Intermediate/temporary files** used during the build: NuGet restore data (`project.assets.json`), generated source files and partly compiled output. The build uses them to put the final result together and to skip work that hasn't changed. |
+| `bin/` | The **final build output**: the compiled **assembly** `GameStore.Api.dll` (your app's code as a DLL), plus the files needed to run it, like copied `appsettings` files and the DLLs of referenced packages. For a Debug build it's in `bin/Debug/net8.0/`. |
+
+Both folders are generated, so they're in `.gitignore` and never committed. It's safe to delete them (or run `dotnet clean`), and the next build creates them again.
+
 ## Configuration (appsettings.json)
 
 The `appsettings` files hold the app's **configuration**: settings that can change from one environment to another (development, staging, production) without changing code. Examples are log levels, allowed hosts and, later in the course, the database connection string.
