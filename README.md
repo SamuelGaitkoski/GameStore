@@ -125,17 +125,35 @@ The configurations you can run are the **launch profiles from `launchSettings.js
 
 The `IIS Express` profile isn't included, because C# Dev Kit only runs profiles with `commandName` set to `Project`. The app runs with the URLs and environment variables of the profile you pick.
 
-During a debug session you can:
+### Breakpoints
 
-- Set **breakpoints** by clicking left of a line number, so the app pauses there
-- **Step** through the code and inspect variables while paused
-- Use the debug toolbar to continue, restart or stop
+A **breakpoint** marks a line where execution should pause. To set one, click in the gutter left of the line number (a red dot appears) or press `F9` on the line. Then, in a debug session, the app **stops at that line at run time**, before running it.
+
+When it stops depends on when that line runs:
+
+- `var app = builder.Build();` runs at **startup**, so the app pauses as soon as it starts.
+- The handler `() => "Hello World!"` inside `app.MapGet` runs only when a **request** to `/` arrives. The app pauses when the browser (or REST Client) calls that URL.
+
+While paused, you can:
+
+- See local variables in the **Variables** panel, or hover over a variable in the editor
+- Add expressions to the **Watch** panel
+- See how execution got there in the **Call Stack** panel
+- Evaluate expressions in the **Debug Console**
+
+Breakpoints only work in a debug session. With **Run Without Debugging** (`Ctrl+F5`), the app ignores them.
 
 | Shortcut | What it does |
 | --- | --- |
-| `F5` | Start debugging (or continue when paused) |
+| `F5` | Start debugging, or continue to the next breakpoint when paused |
 | `Ctrl+F5` | Run without debugging |
 | `Shift+F5` | Stop the debug session |
+| `F9` | Toggle a breakpoint on the current line |
+| `F10` | Step over: run the current line and stop at the next one |
+| `F11` | Step into: go inside the method called on the current line |
+| `Shift+F11` | Step out: finish the current method and return to its caller |
+
+On a Mac, add `fn` to these keys unless the top row is set to standard function keys.
 
 Because the profile has `launchBrowser` set to `true`, a browser opens on the app's URL when it starts.
 
