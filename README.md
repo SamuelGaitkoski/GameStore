@@ -14,6 +14,18 @@ The project is **GameStore.Api**, a REST API for a game store, built on the **AS
 
 The repo uses a **solution** (`GameStore.sln`) to group the different projects that together build the application. Right now it holds just `GameStore.Api`, and more projects can be added to it as the app grows. Opening the solution in VS Code (C# Dev Kit) or Visual Studio loads all its projects at once, and building the solution builds every project in it.
 
+### Solution Explorer
+
+C# Dev Kit adds a **Solution Explorer** view to the VS Code Explorer sidebar. It shows the solution, its projects, and a **Dependencies** node under each project. If it's hidden, right-click the `Explorer` header (or click `···`) and check **Solution Explorer**, or run `.NET: Open Solution` from the Command Palette.
+
+In the course, Julio Casal uses Solution Explorer to show how it helps manage dependencies across the different projects. He's showing the **projects**, because that's where dependencies live, not in the solution:
+
+- **The `.sln`** only lists which projects belong together, so you can build and open them as one unit.
+- **Each `.csproj`** stores that project's own dependencies:
+  - `<ProjectReference>` for other projects in the solution
+  - `<PackageReference>` for NuGet packages
+- **Solution Explorer** gives you a visual way to edit those `.csproj` entries. Right-click a project and use **Add Project Reference** or **Add NuGet Package**, then see the result under the project's **Dependencies** node.
+
 ## What this course covers
 
 - Creating ASP.NET Core apps
