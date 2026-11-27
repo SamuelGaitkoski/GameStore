@@ -90,7 +90,12 @@ Both folders are generated, so they're in `.gitignore` and never committed. It's
 
 Press **`F5`** (or **Run > Start Debugging**) to run the application. This starts a **debug session**: VS Code builds the project, runs it and attaches the debugger to it.
 
-The first time, VS Code asks you to **choose a debugger**. Pick **C#**, then choose the project and launch profile to run (for example `GameStore.Api [http]`, from `launchSettings.json`).
+The first time, VS Code asks you to **choose a debugger**. Pick **C#**. Then it asks you to **select the configuration** to run. The options are the **launch profiles from `launchSettings.json`**:
+
+- `C#: GameStore.Api [http]` runs on `http://localhost:5277`
+- `C#: GameStore.Api [https]` runs on `https://localhost:7220` and `http://localhost:5277`
+
+The `IIS Express` profile isn't listed, because C# Dev Kit only runs profiles with `commandName` set to `Project`. The app runs with the URLs and environment variables of the profile you pick.
 
 During a debug session you can:
 
