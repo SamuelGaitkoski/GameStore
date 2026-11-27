@@ -94,6 +94,8 @@ There are several ways to run the application:
 - The **Run and Debug** view: click the play-and-bug icon in the Activity Bar (or press `Cmd+Shift+D`, `Ctrl+Shift+D` on Windows/Linux), then click the **Run and Debug** button
 - The **Run** (▷) button at the top right of the editor when a C# file like `Program.cs` is open
 
+> **On a Mac, `F5` may open Dictation** (the microphone) instead of starting the debugger, because the top-row keys act as media keys by default. Press **`fn+F5`** instead, or use the Run menu or the Run and Debug view. To make the top row act as `F1`, `F2`, etc. all the time, go to **System Settings > Keyboard > Keyboard Shortcuts > Function Keys** and turn on **Use F1, F2, etc. keys as standard function keys**. The same applies to `Ctrl+F5` and `Shift+F5` below.
+
 Each one starts a **debug session**: VS Code builds the project, runs it and attaches the debugger to it.
 
 > Open a C# file such as `Program.cs` first. If the active file is something else, like the `.csproj`, the Run and Debug view shows "Open a file which can be debugged or run" because it doesn't know which debugger to use. No `launch.json` is needed, since C# Dev Kit uses the profiles in `launchSettings.json`.
