@@ -54,6 +54,21 @@ Installing C# Dev Kit also installs its dependencies, the [C#](https://marketpla
 | `dotnet new <template>` | Creates a new project from a template |
 | `dotnet new list` | Lists the project templates available in the SDK |
 
+## C# Dev Kit commands
+
+Because C# Dev Kit is installed, many tasks can be done from the VS Code Command Palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows/Linux). Type `.NET:` to see all options.
+
+> The `>` prefix is what tells VS Code to search commands. `Cmd+Shift+P` adds it automatically. If you open Quick Open with `Cmd+P` (`Ctrl+P`) instead, which searches files, type `>` first to switch to commands.
+
+Some common commands:
+
+| Command | What it does |
+| --- | --- |
+| `.NET: New Project...` | Creates a new project from a template (like `dotnet new`) |
+| `.NET: Open Solution` | Opens an existing solution |
+| `.NET: Build` | Builds the solution |
+| `.NET: Clean` | Removes build outputs |
+
 ## Getting started
 
 ```bash
