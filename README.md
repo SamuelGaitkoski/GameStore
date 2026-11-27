@@ -30,6 +30,30 @@ This repository contains the code written step by step alongside the videos, cov
 - .NET 8 SDK
 - ASP.NET Core
 
+## Prerequisites
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+## VS Code extensions
+
+- [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) (Microsoft)
+- [IntelliCode for C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscodeintellicode-csharp) (Microsoft)
+- [.NET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime) (Microsoft)
+- [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) (Huachao Mao)
+- [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite) (alexcvzz)
+
+Installing C# Dev Kit also installs its dependencies, the [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) extension and the .NET Install Tool.
+
+## .NET CLI commands
+
+| Command | What it does |
+| --- | --- |
+| `dotnet --version` | Shows the .NET SDK version in use |
+| `dotnet --info` | Shows details on installed SDKs, runtimes, and environment |
+| `dotnet new <template>` | Creates a new project from a template |
+| `dotnet new list` | Lists the project templates available in the SDK |
+
 ## Getting started
 
 ```bash
