@@ -92,6 +92,15 @@ The settings inside each profile:
 
 `dotnet run` uses the first profile, `http`. To pick another, run `dotnet run --launch-profile https`.
 
+### How `ASPNETCORE_ENVIRONMENT` reaches the app
+
+The app itself never reads `launchSettings.json`. It happens in two steps:
+
+1. **The tool that starts the app** (`dotnet run`, VS Code or Visual Studio) reads the chosen profile and sets its `environmentVariables`, like `ASPNETCORE_ENVIRONMENT=Development`, on the app's process.
+2. **ASP.NET Core** reads `ASPNETCORE_ENVIRONMENT` from the process's environment variables when `WebApplication.CreateBuilder(args)` runs. It uses the value to pick the environment, for example to load `appsettings.Development.json`. The current environment is available as `app.Environment`.
+
+If `ASPNETCORE_ENVIRONMENT` isn't set, the environment defaults to **Production**. That's what happens when the app is deployed, since `launchSettings.json` isn't used there.
+
 ### HTTP vs HTTPS
 
 - **HTTP** sends requests and responses as plain text, so anyone on the network could read or change them.
