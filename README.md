@@ -86,6 +86,26 @@ Building the project creates two folders inside `GameStore.Api`:
 
 Both folders are generated, so they're in `.gitignore` and never committed. It's safe to delete them (or run `dotnet clean`), and the next build creates them again.
 
+## Running and debugging in VS Code
+
+Press **`F5`** (or **Run > Start Debugging**) to run the application. This starts a **debug session**: VS Code builds the project, runs it and attaches the debugger to it.
+
+The first time, VS Code asks you to **choose a debugger**. Pick **C#**, then choose the project and launch profile to run (for example `GameStore.Api [http]`, from `launchSettings.json`).
+
+During a debug session you can:
+
+- Set **breakpoints** by clicking left of a line number, so the app pauses there
+- **Step** through the code and inspect variables while paused
+- Use the debug toolbar to continue, restart or stop
+
+| Shortcut | What it does |
+| --- | --- |
+| `F5` | Start debugging (or continue when paused) |
+| `Ctrl+F5` | Run without debugging |
+| `Shift+F5` | Stop the debug session |
+
+Because the profile has `launchBrowser` set to `true`, a browser opens on the app's URL when it starts.
+
 ## Configuration (appsettings.json)
 
 The `appsettings` files hold the app's **configuration**: settings that can change from one environment to another (development, staging, production) without changing code. Examples are log levels, allowed hosts and, later in the course, the database connection string.
