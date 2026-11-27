@@ -155,6 +155,11 @@ Breakpoints only work in a debug session. With **Run Without Debugging** (`Ctrl+
 
 On a Mac, add `fn` to these keys unless the top row is set to standard function keys.
 
+### Stopping the app
+
+- **Started from VS Code** (`F5`, Run and Debug, or ▷): press **`Shift+F5`**, or click the red square **Stop** button in the debug toolbar at the top of the editor.
+- **Started with `dotnet run` in a terminal:** press **`Ctrl+C`** in that terminal (`Ctrl`, not `Cmd`, on macOS too).
+
 Because the profile has `launchBrowser` set to `true`, a browser opens on the app's URL when it starts.
 
 ## Configuration (appsettings.json)
