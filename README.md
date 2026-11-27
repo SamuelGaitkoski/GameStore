@@ -98,14 +98,32 @@ There are several ways to run the application:
 
 Each one starts a **debug session**: VS Code builds the project, runs it and attaches the debugger to it.
 
-> Open a C# file such as `Program.cs` first. If the active file is something else, like the `.csproj`, the Run and Debug view shows "Open a file which can be debugged or run" because it doesn't know which debugger to use. No `launch.json` is needed, since C# Dev Kit uses the profiles in `launchSettings.json`.
+### launch.json
 
-The first time, VS Code asks you to **choose a debugger**. Pick **C#**. Then it asks you to **select the configuration** to run. The options are the **launch profiles from `launchSettings.json`**:
+Without a `launch.json`, VS Code picks the debugger from the **active file**. If the `.csproj` is open, it looks for an XML debugger and asks "You don't have an extension for debugging XML". For that reason the repo includes `.vscode/launch.json`, which points straight at the C# project:
+
+```json
+{
+    "name": "C#: GameStore.Api [http]",
+    "type": "dotnet",
+    "request": "launch",
+    "projectPath": "${workspaceFolder}/GameStore.Api/GameStore.Api.csproj",
+    "launchConfigurationId": "TargetFramework=;http"
+}
+```
+
+- **`type: "dotnet"`:** uses the C# Dev Kit debugger.
+- **`projectPath`:** the project to build and run.
+- **`launchConfigurationId`:** the launch profile from `launchSettings.json` to use (`http` or `https`).
+
+With it, `F5` works no matter which file is open. Pick `C#: GameStore.Api [http]` or `[https]` from the dropdown at the top of the Run and Debug view.
+
+The configurations you can run are the **launch profiles from `launchSettings.json`**, set up in `.vscode/launch.json` (see below). Select one in the dropdown at the top of the **Run and Debug** view, and `F5` runs it:
 
 - `C#: GameStore.Api [http]` runs on `http://localhost:5277`
 - `C#: GameStore.Api [https]` runs on `https://localhost:7220` and `http://localhost:5277`
 
-The `IIS Express` profile isn't listed, because C# Dev Kit only runs profiles with `commandName` set to `Project`. The app runs with the URLs and environment variables of the profile you pick.
+The `IIS Express` profile isn't included, because C# Dev Kit only runs profiles with `commandName` set to `Project`. The app runs with the URLs and environment variables of the profile you pick.
 
 During a debug session you can:
 
