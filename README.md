@@ -69,6 +69,7 @@ You can also build **all the projects at once through the solution**:
 
 - **Solution Explorer:** right-click the solution (`GameStore`) and choose **Build**.
 - **CLI:** run `dotnet build` in the repo root, where `GameStore.sln` is, or `dotnet build GameStore.sln`.
+- **VS Code build task:** press `Cmd+Shift+B` (`Ctrl+Shift+B` on Windows/Linux), or run **Tasks: Run Build Task** from the Command Palette. C# Dev Kit provides `dotnet: build` tasks, so you can pick the solution or a single project from the list without writing a `tasks.json`.
 
 Building the solution builds every project it lists, in the right order based on their project references.
 
