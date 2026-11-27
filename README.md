@@ -44,7 +44,7 @@ app.Run();
 
 ### `app` is the host
 
-In the course, Julio Casal calls `app` our **host**. That's not instead of being a `WebApplication`: `app` **is** a `WebApplication`, and `WebApplication` is the host. It does three jobs at once:
+`app` is our **host**. It's a `WebApplication`, which does three jobs at once:
 
 - **Host** (`IHost`): runs the app, starts the web server (Kestrel) and manages the app's lifetime.
 - **Request pipeline** (`IApplicationBuilder`): where you add middleware.
