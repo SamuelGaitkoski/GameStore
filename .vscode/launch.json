@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: GameStore.Api [http]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/GameStore.Api/GameStore.Api.csproj",
+            "launchConfigurationId": "TargetFramework=;http"
+        },
+        {
+            "name": "C#: GameStore.Api [https]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/GameStore.Api/GameStore.Api.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
+        }
+    ]
+}
