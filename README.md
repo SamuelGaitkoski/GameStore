@@ -88,7 +88,15 @@ Both folders are generated, so they're in `.gitignore` and never committed. It's
 
 ## Running and debugging in VS Code
 
-Press **`F5`** (or **Run > Start Debugging**) to run the application. This starts a **debug session**: VS Code builds the project, runs it and attaches the debugger to it.
+There are several ways to run the application:
+
+- **`F5`**, or **Run > Start Debugging** from the menu bar
+- The **Run and Debug** view: click the play-and-bug icon in the Activity Bar (or press `Cmd+Shift+D`, `Ctrl+Shift+D` on Windows/Linux), then click the **Run and Debug** button
+- The **Run** (▷) button at the top right of the editor when a C# file like `Program.cs` is open
+
+Each one starts a **debug session**: VS Code builds the project, runs it and attaches the debugger to it.
+
+> Open a C# file such as `Program.cs` first. If the active file is something else, like the `.csproj`, the Run and Debug view shows "Open a file which can be debugged or run" because it doesn't know which debugger to use. No `launch.json` is needed, since C# Dev Kit uses the profiles in `launchSettings.json`.
 
 The first time, VS Code asks you to **choose a debugger**. Pick **C#**. Then it asks you to **select the configuration** to run. The options are the **launch profiles from `launchSettings.json`**:
 
