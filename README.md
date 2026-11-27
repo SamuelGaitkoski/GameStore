@@ -72,6 +72,33 @@ The `appsettings` files hold the app's **configuration**: settings that can chan
 
 Configuration can also come from other sources, which override the JSON files in this order (later wins): `appsettings.json` → `appsettings.{Environment}.json` → user secrets (Development only) → environment variables → command-line arguments.
 
+## Launch profiles (launchSettings.json)
+
+`Properties/launchSettings.json` defines **launch profiles**. Each profile is a set of settings for running the app **locally**: which URLs it listens on, which environment variables it gets, and whether a browser opens. It's only used on your machine, not when the app is deployed.
+
+| Profile | URL(s) | What it does |
+| --- | --- | --- |
+| `http` | `http://localhost:5277` | Runs the app with the Kestrel web server over plain HTTP |
+| `https` | `https://localhost:7220` and `http://localhost:5277` | Runs the app with Kestrel over HTTPS, and HTTP too |
+| `IIS Express` | `http://localhost:51787` (SSL port `44312`) | Runs the app behind IIS Express, which is Windows and Visual Studio only. The `iisSettings` section configures it. |
+
+The settings inside each profile:
+
+- **`commandName`:** how the app is started. `Project` runs it directly with Kestrel (like `dotnet run`), and `IISExpress` runs it behind IIS Express.
+- **`applicationUrl`:** the URL(s) the app listens on.
+- **`environmentVariables`:** variables set for the run. All three profiles set `ASPNETCORE_ENVIRONMENT` to `Development`, which is why `appsettings.Development.json` is loaded.
+- **`launchBrowser`:** opens a browser when the app starts from an IDE debugger. `dotnet run` doesn't open one.
+- **`dotnetRunMessages`:** shows extra startup messages in the terminal when using `dotnet run`.
+
+`dotnet run` uses the first profile, `http`. To pick another, run `dotnet run --launch-profile https`.
+
+### HTTP vs HTTPS
+
+- **HTTP** sends requests and responses as plain text, so anyone on the network could read or change them.
+- **HTTPS** is HTTP encrypted with **TLS**, which keeps traffic private and proves the server is who it claims to be. It's what real apps use in production.
+
+Locally, HTTPS needs the .NET **development certificate**. Run `dotnet dev-certs https --trust` once so your browser trusts it.
+
 ## Program.cs
 
 ```csharp
