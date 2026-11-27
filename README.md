@@ -26,6 +26,32 @@ In the course, Julio Casal uses Solution Explorer to show how it helps manage de
   - `<PackageReference>` for NuGet packages
 - **Solution Explorer** gives you a visual way to edit those `.csproj` entries. Right-click a project and use **Add Project Reference** or **Add NuGet Package**, then see the result under the project's **Dependencies** node.
 
+## Program.cs
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello World!");
+
+app.Run();
+```
+
+- `WebApplication.CreateBuilder(args)` creates a builder that sets up configuration, logging and services.
+- `builder.Build()` creates the `WebApplication`, stored in `app`.
+- `app.MapGet(...)` maps an endpoint: a `GET` request to `/` returns `"Hello World!"`.
+- `app.Run()` starts the app and listens for HTTP requests.
+
+### `app` is the host
+
+In the course, Julio Casal calls `app` our **host**. That's not instead of being a `WebApplication`: `app` **is** a `WebApplication`, and `WebApplication` is the host. It does three jobs at once:
+
+- **Host** (`IHost`): runs the app, starts the web server (Kestrel) and manages the app's lifetime.
+- **Request pipeline** (`IApplicationBuilder`): where you add middleware.
+- **Endpoint routing** (`IEndpointRouteBuilder`): where you map endpoints like `MapGet`.
+
+> Hovering `app` in VS Code shows `WebApplication? app`. The `?` appears because `var` is always inferred as nullable for reference types. The hover also says `'app' is not null here`, so there's nothing to fix.
+
 ## What this course covers
 
 - Creating ASP.NET Core apps
