@@ -57,6 +57,16 @@ As the project grows, the `.csproj` also lists:
 
 You can add packages from the CLI with `dotnet add package <name>`, or from Solution Explorer.
 
+## Building the project
+
+The **build process** turns the code into binaries: it compiles the C# source files into an assembly (`GameStore.Api.dll`) that .NET can run. There are a few ways to start a build:
+
+- **Solution Explorer:** right-click the `GameStore.Api` project (or the solution) and choose **Build**. Building the solution builds every project in it.
+- **Command Palette:** run `.NET: Build`.
+- **CLI:** run `dotnet build` in the project folder.
+
+The build output appears in the terminal, ending with the path of the built DLL. `dotnet run` builds the project first too, so you don't need a separate build before running.
+
 ## Build output (bin and obj)
 
 Building the project creates two folders inside `GameStore.Api`:
