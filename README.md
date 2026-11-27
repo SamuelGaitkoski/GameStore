@@ -26,6 +26,37 @@ In the course, Julio Casal uses Solution Explorer to show how it helps manage de
   - `<PackageReference>` for NuGet packages
 - **Solution Explorer** gives you a visual way to edit those `.csproj` entries. Right-click a project and use **Add Project Reference** or **Add NuGet Package**, then see the result under the project's **Dependencies** node.
 
+## The project file (.csproj)
+
+`GameStore.Api.csproj` is the **project file**. It tells the .NET SDK what kind of project this is and how to build it.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
+```
+
+| Part | What it means |
+| --- | --- |
+| `Sdk="Microsoft.NET.Sdk.Web"` | The project type. The **Web SDK** makes this an ASP.NET Core web project, so it references the ASP.NET Core framework and supports web features like `launchSettings.json` and `appsettings.json`. A plain console app or class library uses `Microsoft.NET.Sdk` instead. |
+| `<TargetFramework>net8.0</TargetFramework>` | The **target framework**: the .NET version the project builds for and runs on (.NET 8). |
+| `<Nullable>enable</Nullable>` | Turns on **nullable reference types**, so the compiler warns about possible `null` values. That's why the editor shows types like `WebApplication?`. |
+| `<ImplicitUsings>enable</ImplicitUsings>` | Adds common `using` directives automatically (like `System` and `Microsoft.AspNetCore.Builder`), so `Program.cs` needs no `using` lines at the top. |
+
+As the project grows, the `.csproj` also lists:
+
+- **NuGet packages** (imported libraries), with `<PackageReference Include="..." Version="..." />`, for example Entity Framework Core later in the course
+- **Other projects** it depends on, with `<ProjectReference Include="..." />`
+- Other **build settings**, like the output type, assembly name or root namespace
+
+You can add packages from the CLI with `dotnet add package <name>`, or from Solution Explorer.
+
 ## Program.cs
 
 ```csharp
